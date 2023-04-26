@@ -2,6 +2,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -23,21 +27,21 @@ public class LoginPage extends BasePage{
     }
 
     public void enterValueToUserName(User user){
-        userName.sendKeys(user.getUsername());
+        enterTextToElement(user.getUsername(), userName);
     }
 
     public void enterValueToPassword(User user){
-        password.sendKeys(user.getPassword());
+        enterTextToElement(user.getPassword(),password);
     }
 
     public void pushLoginButton(){
-        loginButton.click();
+        clickOnTheElement(loginButton);
     }
 
     public void successLogin(User user){
-        userName.sendKeys(user.getUsername());
-        password.sendKeys(user.getPassword());
-        loginButton.click();
+        enterTextToElement(user.getUsername(), userName);
+        enterTextToElement(user.getPassword(),password);
+        clickOnTheElement(loginButton);
     }
 
     public void errorMessageTextIsCorrect(String expectedText){
@@ -45,7 +49,7 @@ public class LoginPage extends BasePage{
     }
 
     public String getErrorMessageText(){
-        return errorMessage.getText();
+        return getTextOfElement(errorMessage);
     }
 
 }

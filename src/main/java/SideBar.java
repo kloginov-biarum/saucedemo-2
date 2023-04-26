@@ -67,7 +67,7 @@ public class SideBar extends BasePage{
        // wait.until(ExpectedConditions.visibilityOf(sideBarMenu));
     }
 
-    public void closeSideBar() throws InterruptedException {
+    public void closeSideBar(){
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(allItemsLink));
@@ -81,4 +81,10 @@ public class SideBar extends BasePage{
         wait.until(ExpectedConditions.attributeToBe(sideBarMenu, "aria-hidden", "true"));
     }
 
+
+    public void clickOnResetAppState(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(resetAppStateLink));
+        resetAppStateLink.click();
+    }
 }

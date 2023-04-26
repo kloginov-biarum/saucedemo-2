@@ -34,8 +34,11 @@ public class SideBarTests extends BaseTest {
         assertFalse(sideBar.aboutLinkIsDisplayed());
         assertFalse(sideBar.logoutLinkIsDisplayed());
         assertFalse(sideBar.resetAppLinkIsDisplayed());
+    }
 
 
+    public void resetAppStateCorrectly(){
+       //
     }
 
 

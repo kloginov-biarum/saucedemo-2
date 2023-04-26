@@ -14,6 +14,19 @@ public class InventoryPage extends BasePage{
     @FindBy(xpath = "//div[@class='inventory_item']")
     private List<WebElement> productCards;
 
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    private WebElement backpackAddToCrtButton;
+
+    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
+    private WebElement bikeAddToCartButton;
+
+    @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
+    private WebElement tShortAddtoCartButton;
+    @FindBy(id = "shopping_cart_container")
+    private WebElement cartIcon;
+
+    @FindBy(xpath = "(//div[@class = 'inventory_item_price'])[1]")
+    private WebElement backpackCost;
     public InventoryPage(WebDriver driver) {
         super(driver);
     }
@@ -28,6 +41,25 @@ public class InventoryPage extends BasePage{
              productCards) {
             assertTrue(card.isDisplayed());
         }
+    }
+
+    public void clickOnBackpackAddToCart(){
+        backpackAddToCrtButton.click();
+    }
+
+    public void clickOnBikeAddToCart(){
+        bikeAddToCartButton.click();
+    }
+
+    public void clickOnTShortAddToCart(){
+        tShortAddtoCartButton.click();
+    }
+    public void clickOnCartIcon(){
+        cartIcon.click();
+    }
+
+    public String getBackpackCost(){
+       return backpackCost.getText();
     }
 
 }

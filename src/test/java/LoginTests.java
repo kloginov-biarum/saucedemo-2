@@ -45,6 +45,13 @@ public class LoginTests extends BaseTest{
                 .contains("Username and password do not match any user in this service"));
     }
 
+    @Test
+    public void successLogout(){
+        //check logout works as expected
+
+
+    }
+
 
 
 
